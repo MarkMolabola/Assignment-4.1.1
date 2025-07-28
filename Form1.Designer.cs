@@ -66,10 +66,12 @@
             LastNameSearchBox = new TextBox();
             Searchbtn = new Button();
             dataGridView1 = new DataGridView();
+            ShowAllbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            flowLayoutPanel11.SuspendLayout();
             flowLayoutPanel10.SuspendLayout();
             flowLayoutPanel9.SuspendLayout();
             flowLayoutPanel8.SuspendLayout();
@@ -115,6 +117,7 @@
             // 
             // flowLayoutPanel11
             // 
+            flowLayoutPanel11.Controls.Add(ShowAllbtn);
             flowLayoutPanel11.Dock = DockStyle.Top;
             flowLayoutPanel11.Location = new Point(0, 400);
             flowLayoutPanel11.Name = "flowLayoutPanel11";
@@ -457,6 +460,16 @@
             dataGridView1.Size = new Size(524, 370);
             dataGridView1.TabIndex = 2;
             // 
+            // ShowAllbtn
+            // 
+            ShowAllbtn.Location = new Point(3, 3);
+            ShowAllbtn.Name = "ShowAllbtn";
+            ShowAllbtn.Size = new Size(261, 35);
+            ShowAllbtn.TabIndex = 0;
+            ShowAllbtn.Text = "Show All ";
+            ShowAllbtn.UseVisualStyleBackColor = true;
+            ShowAllbtn.Click += ShowAllbtn_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -469,6 +482,7 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            flowLayoutPanel11.ResumeLayout(false);
             flowLayoutPanel10.ResumeLayout(false);
             flowLayoutPanel9.ResumeLayout(false);
             flowLayoutPanel9.PerformLayout();
@@ -536,5 +550,6 @@
         private TextBox LastNameSearchBox;
         private Button Searchbtn;
         private DataGridView dataGridView1;
+        private Button ShowAllbtn;
     }
 }

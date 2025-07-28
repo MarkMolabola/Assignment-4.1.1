@@ -6,7 +6,7 @@ namespace Assignment_4._1._1
         {
             InitializeComponent();
             Person.CreateData();
-            dataGridView1.DataSource = Person.PhoneBook.Values.ToList();
+            
         }
 
         private void AddPersonbtn_Click(object sender, EventArgs e)
@@ -32,7 +32,8 @@ namespace Assignment_4._1._1
         private void Searchbtn_Click(object sender, EventArgs e)
         {
             string fullName = $"{FirstNameSearchBox.Text}{LastNameSearchBox.Text}";
-            if (Person.PhoneBook.TryGetValue(fullName, out Person person))
+            string searchName = fullName.Trim();
+            if (Person.PhoneBook.TryGetValue(searchName, out Person person))
             {
                 MessageBox.Show($"Found: {person.FirstName} {person.LastName}\nPhone: {person.PhoneNumber}\nAddress: {person.Address}");
             }
@@ -40,6 +41,11 @@ namespace Assignment_4._1._1
             {
                 MessageBox.Show("Person not found in the phone book.");
             }
+        }
+
+        private void ShowAllbtn_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = Person.PhoneBook.Values.ToList();
         }
     }
 }
